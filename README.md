@@ -17,39 +17,6 @@ The Learn ABCs project helps children learn through interactive exercises and ac
 ## Database Setup
 
 This project requires a database to store user progress, alphabet data, and activity results. Follow these steps to set up the database:
-
-### Creating the Database
-
-Run the following SQL code to create the necessary database and tables:
-
-```sql
--- Create the database
-CREATE DATABASE kids_learning;
-
--- Use the database
-USE kids_learning;
-
--- Create users table
-CREATE TABLE users (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Create scores table
-CREATE TABLE scores (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) NOT NULL,
-    module VARCHAR(50) NOT NULL,
-    score INT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (username) REFERENCES users(username)
-);
-```
-
-### Database Connection
-
 Configure your database connection in the application settings file.
 
 ## Usage
